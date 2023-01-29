@@ -1,0 +1,67 @@
+import re
+
+# sample string
+text = "The stock symbols for Apple and Microsoft are AAPL and MSFT."
+
+# regular expression pattern to match stock symbols
+pattern = re.compile(r'\b[A-Z]{2,5}\b')
+
+# extract stock symbols using the findall method
+stock_symbols = re.findall(pattern, text)
+
+print(stock_symbols)
+# Output: ['AAPL', 'MSFT']
+
+import requests
+
+api_key = "YDSPE8OO05C9IA2Q"
+symbol = "AAPL"
+function = "TIME_SERIES_DAILY_ADJUSTED"
+
+url = f"https://www.alphavantage.co/query?function={function}&symbol={symbol}&apikey={YDSPE8OO05C9IA2Q}"
+
+response = requests.get(url)
+data = response.json()
+
+print(data)
+
+
+Welcome to Alpha Vantage! Your API key is: YDSPE8OO05C9IA2Q. Please record this API key at a safe place for future data access.
+
+'''
+Yahoo Finance
+'''
+import yfinance as yf
+
+# Get the information for the specified ticker
+ticker = yf.Ticker("TICKER_NAME_HERE")
+
+# Get the stock info
+info = ticker.info
+
+# Get the stock historical prices
+history = ticker.history(period="max")
+
+# Get the stock recommendations
+recommendations = ticker.recommendations
+
+# Get the stock earnings
+earnings = ticker.earnings
+
+# Get the stock sustainability
+sustainability = ticker.sustainability
+
+# Get the stock institutional holders
+holders = ticker.institutional_holders
+
+# Get the stock balance sheet
+bs = ticker.balance_sheet
+
+# Get the stock cash flow
+cf = ticker.cashflow
+
+# Get the stock options
+options = ticker.options
+
+# Get the stock recommendation trends
+trend = ticker.recommendations
